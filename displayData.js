@@ -11,10 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const url = "mongodb+srv://erenaci:ljmSt65s48IulZUf@cluster0-bny5d.mongodb.net/test?w=majority";
 const dbName = 'Companies';
 
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, function () {
-	console.log(`Server running at http://localhost:${port}/`);
+app.listen(PORT, function () {
+	console.log(`Server running at http://localhost:${PORT}/`);
 })
 
 function displayData(client) {
