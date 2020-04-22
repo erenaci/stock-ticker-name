@@ -7,7 +7,6 @@ const url = "mongodb+srv://erenaci:ljmSt65s48IulZUf@cluster0-bny5d.mongodb.net/t
 
 const dbName = 'Companies';
 
-
 function insertData(client) {
 	var dbo = client.db(dbName);
 	var collection = dbo.collection('companies');
@@ -21,9 +20,6 @@ function insertData(client) {
 			console.log("data inserted");
 		})
 	})
-	// .on('end', function () {
-	// 	client.close();
-	// });
 }
 
 var client = MongoClient.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});

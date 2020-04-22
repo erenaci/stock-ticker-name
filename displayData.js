@@ -18,11 +18,9 @@ app.listen(port, function () {
 })
 
 function displayData(client) {
-	console.log('IN displayData');
 	var dbo = client.db(dbName);
 	var collection = dbo.collection('companies');
 
-	console.log('BEFORE get');
 	app.get('/', function (req, res) {
 		if (req.query['company'] == null) {
 			var toFind = { Ticker: `${req.query['ticker']}` };
@@ -37,7 +35,6 @@ function displayData(client) {
 			});
 		}
 	});
-
 }
 
 var client = MongoClient.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
