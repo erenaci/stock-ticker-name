@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Stock Tickers</title>
+        <script lang="javascript">      
+            
+            function setNameAsTicker() {
+                    document.getElementById('textbox').setAttribute("name", "ticker");
+            }
+            
+            function setNameAsCompany() {
+                    document.getElementById('textbox').setAttribute("name", "company");
+            }
+            
+        </script>
+	</head>
+
+	<body>
+		<h3>Please select:</h3>
+		<input type='radio' id='ticker' value='ticker' onclick="setNameAsTicker()">
+        <label for='ticker'>Stock Ticker</label>
+        <input type='radio' id='company' value='company' onclick="setNameAsCompany()">
+        <label for='company'>Company Name</label>
+        
+		<h3>Please enter what you have selected:</h3>
+        <form method='GET' action='http://localhost:3000'>
+            <input type='text' id='textbox'>
+            <button type='submit'id='submit'>Submit</button>
+        </form>
+	</body>
+</html>
