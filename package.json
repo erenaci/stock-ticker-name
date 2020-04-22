@@ -6,7 +6,7 @@
     "npm": "6.14.4"
   },
   "description": "Node app to store data into mongoDB database",
-  "main": "index.js",
+  "main": "displayData.js",
   "scripts": {
     "start": "node displayData.js",
     "test": "echo \"Error: no test specified\" && exit 1"
