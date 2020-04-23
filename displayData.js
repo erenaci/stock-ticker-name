@@ -18,12 +18,15 @@ app.listen(port, function () {
 	console.log(`Server running at http://localhost:${port}/`);
 })
 
+app.get('/', function (req, res) {
+	res.sendFile(__dirname + '/index.html');
+});
+
 function displayData(client) {
 	var dbo = client.db(dbName);
 	var collection = dbo.collection('companies');
 
 	app.get('/', function (req, res) {
-		res.sendFile(__dirname + '/index.html');
 
 		if (req.query['company'] == null) {
 			var toFind = { Ticker: `${req.query['ticker']}` };
