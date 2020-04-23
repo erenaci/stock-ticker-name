@@ -1,1 +1,1 @@
-web: node displayData.js
+web: npm run start
