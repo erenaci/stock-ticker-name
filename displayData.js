@@ -12,10 +12,10 @@ app.use(express.static(__dirname + '/displayData.js'));
 const url = "mongodb+srv://erenaci:ljmSt65s48IulZUf@cluster0-bny5d.mongodb.net/test?w=majority";
 const dbName = 'Companies';
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-app.listen(PORT, function () {
-	console.log(`Server running at http://localhost:${PORT}/`);
+app.listen(port, function () {
+	console.log(`Server running at http://localhost:${port}/`);
 })
 
 function displayData(client) {
