@@ -23,6 +23,8 @@ function displayData(client) {
 	var collection = dbo.collection('companies');
 
 	app.get('/', function (req, res) {
+		res.sendFile(__dirname + '/index.html');
+
 		if (req.query['company'] == null) {
 			var toFind = { Ticker: `${req.query['ticker']}` };
 			var query = collection.findOne(toFind, function(err, item) {
