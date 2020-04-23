@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 const url = "mongodb+srv://erenaci:ljmSt65s48IulZUf@cluster0-bny5d.mongodb.net/test?w=majority";
 const dbName = 'Companies';
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 
 // http.createServer(function (req, res) {

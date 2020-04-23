@@ -3,7 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Stock Tickers</title>
-        <script lang="javascript">      
+        <script lang="javascript">    
+
+            var url = window.location.port;
+            console.log("port is: ", url);
+
+//            if (url != 3000) {
+//                document.getElementById('forms').setAttribute("action", `http://localhost:${url}/result.html`);
+//            }
             
             function setNameAsTicker() {
                     document.getElementById('textbox').setAttribute("name", "ticker");
@@ -23,9 +30,14 @@
         <label for='ticker'>Stock Ticker</label>
         <input type='radio' id='company' value='company' onclick="setNameAsCompany()">
         <label for='company'>Company Name</label>
-        
+
 		<h3>Please enter what you have selected:</h3>
-        <form method='GET' action='http://localhost:3000/result.html'>
+        <form id='forms' method='GET' action=http://localhost:3000/result.html>
+            <script>
+                if (url != 3000) {
+                document.getElementById('forms').setAttribute("action", `http://localhost:${url}/result.html`);
+                }
+            </script>
             <input type='text' id='textbox'>
             <button type='submit'id='submit'>Submit</button>
         </form>
