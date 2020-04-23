@@ -1,5 +1,4 @@
 const http = require('http');
-const fs = require('fs');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const express = require('express');
@@ -14,22 +13,6 @@ const url = "mongodb+srv://erenaci:ljmSt65s48IulZUf@cluster0-bny5d.mongodb.net/t
 const dbName = 'Companies';
 
 const port = process.env.PORT || 8080;
-
-
-// http.createServer(function (req, res) {
-//   res.writeHead(200, {'Content-Type': 'text/html'});
-//    fs.readFile('./index.html', null, function (err, data) {
-//         if (err) {
-//             res.writeHead(404);
-//             res.write('Whoops! File not found!');
-//         } else {
-//             res.write(data);
-//         }
-//         res.end();
-//     });
-// }).listen(port);
-
-
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/index.html');
@@ -49,13 +32,13 @@ function displayData(client) {
 		if (req.query['company'] == null) {
 			var toFind = { Ticker: `${req.query['ticker']}` };
 			var query = collection.findOne(toFind, function(err, item) {
-			res.send('This stock ticker is of ' + item.Company);  //IT WORKED
+			res.send('This stock ticker is of ' + item.Company);  
 			});
 		}
 		else if (req.query['ticker'] == null) {
 			var toFind = { Company: `${req.query['company']}` };
 			var query = collection.findOne(toFind, function(err, item) {
-			res.send("This company's stock ticker is  " + item.Ticker);  //IT WORKED
+			res.send("This company's stock ticker is  " + item.Ticker);  
 			});
 		}
 	});
